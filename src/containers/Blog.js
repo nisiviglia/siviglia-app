@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import * as api from '../api/BlogApi.js';
 
 class Blog extends Component{
     render(props){
         return(
-            <h4>Blog</h4> 
+            <div>
+                <h4>Blog</h4> 
+                <p>{api.getBlogPosts}</p>
+            </div>
         ); 
     }        
 
