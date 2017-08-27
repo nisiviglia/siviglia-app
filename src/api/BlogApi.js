@@ -4,7 +4,8 @@
 
 
     example usage: 
-        this.getBlogPosts().then((results) =>{
+        import * as api from '../api/BlogApi';
+        api.getBlogPosts().then((results) =>{
             console.log(results)
         })
         .catch((err) => {
@@ -30,12 +31,11 @@ module.exports = {
                 let data = [];
                 for(let i=0; i < posts.length; i++){ 
                     data.push({
-                        id: posts[i]._id,
-                        date: posts[i].date,
+                            id: posts[i]._id.$oid,
+                        date: posts[i].date.$date,
                         title: posts[i].title,
                         discr: posts[i].discr,
                         tags: posts[i].tags,
-                        visable: posts[i].visable
                     });
                 }
                 resolve(data);
@@ -61,8 +61,8 @@ module.exports = {
                 let data = [];
                 for(let i=0; i < posts.length; i++){
                     data.push({
-                        id: posts[i]._id,
-                        date: posts[i].date,
+                        id: posts[i]._id.$oid,
+                        date: posts[i].date.$date,
                         title: posts[i].title,
                         discr: posts[i].discr,
                         tags: posts[i].tags,
@@ -92,8 +92,8 @@ module.exports = {
                 let data = [];
                 for(let i=0; i < posts.length; i++){
                     data.push({
-                        id: posts[i]._id,
-                        date: posts[i].date,
+                        id: posts[i]._id.$oid,
+                        date: posts[i].date.$date,
                         title: posts[i].title,
                         discr: posts[i].discr,
                         tags: posts[i].tags,
@@ -119,17 +119,16 @@ module.exports = {
                 return response.json();
             })
 
-            .then((posts) => {
-                let data = [];
-                data.push({
-                    id: posts._id,
-                    date: posts.date,
-                    title: posts.title,
-                    discr: posts.discr,
-                    text: posts.text,
-                    tags: posts.tags,
-                    visable: posts.visable
-                });
+            .then((post) => {
+                let data = {
+                    id: post._id.$oid,
+                    date: post.date.$date,
+                    title: post.title,
+                    discr: post.discr,
+                    text: post.text,
+                    tags: post.tags,
+                    visable: post.visable
+                };
                 resolve(data);
             })
 
