@@ -11,7 +11,7 @@ module.exports = {
         return new Promise((resolve, reject) => {
             let url = BASE_URL + '/users/nisiviglia/repos';
             fetch( url ).then((response) => {
-                if(response.status != 200){
+                if(response.status !== 200){
                 reject("GitHub API connection failed, status code: " 
                     + response.status);
                 } 
@@ -25,7 +25,8 @@ module.exports = {
                         id: repos[i].id,
                         name: repos[i].name,
                         discr: repos[i].description,
-                        lang: repos[i].language
+                        lang: repos[i].language,
+                        url: repos[i].svn_url
                     });
                 }
                 resolve(data);
@@ -36,5 +37,4 @@ module.exports = {
             });
         });    
     }
-
 };
