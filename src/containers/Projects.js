@@ -36,7 +36,7 @@ class Projects extends Component{
             <div>
                 <h4>Public Projects</h4>
                 {this.state.projects ? this.state.projects.map(this.createProjectCard)
-                    : LoadingMsg}
+                    : LoadingMsg()}
             </div> 
         );
     }

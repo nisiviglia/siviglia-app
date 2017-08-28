@@ -39,7 +39,7 @@ class Post extends Component{
                         text={this.state.text}
                         tags={this.state.tags}
                         />
-                    : LoadingMsg}
+                    : LoadingMsg()}
             </div> 
         );
     }

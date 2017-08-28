@@ -7,8 +7,7 @@ import LoadingMsg from '../components/LoadingMsg'
 class Blog extends Component{
     constructor(props){
         super(props);
-        this.state = {posts: null 
-        };
+        this.state = {posts: null};
     }
 
     componentDidMount(){
@@ -39,7 +38,7 @@ class Blog extends Component{
             <div>
                 <h4>Blog</h4> 
                 {this.state.posts ? this.state.posts.map(this.createPostCard) 
-                    : LoadingMsg}
+                    : LoadingMsg()}
             </div>
         ); 
     }        

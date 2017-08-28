@@ -137,4 +137,29 @@ module.exports = {
             });
         });
     },
+    getPage: function(title) {
+        return new Promise((resolve, reject) =>{
+            let url = BASE_URL + "/api/v1/pages/" + title;
+            fetch(url).then((response) => {
+                if(response.status !== 200){
+                    reject("API call failed, status code: "
+                        + response.status);
+                }
+                return response.json();
+            })
+
+            .then((page) => {
+                let data = {
+                    id: page._id.$oid,
+                    title: page.title,
+                    text: page.text,
+                };
+                resolve(data);
+            })
+
+            .catch((err) => {
+                reject("fetch error: ", err);    
+            });
+        });
+    },
 };
