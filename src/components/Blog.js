@@ -23,6 +23,7 @@ const Blog = (props) => {
 
     return (
         <div className="post-card">
+            <h4>Blog</h4> 
             {props.posts.map(getCard)}
         </div> 
     );

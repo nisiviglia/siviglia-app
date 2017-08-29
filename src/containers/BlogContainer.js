@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import * as api from '../api/BlogApi'
-import PostCard from '../components/PostCard'
+import Blog from '../components/Blog'
 import LoadingMsg from '../components/LoadingMsg'
 
-class Blog extends Component{
+class BlogContainer extends Component{
     constructor(props){
         super(props);
         this.state = {posts: null};
@@ -19,29 +18,15 @@ class Blog extends Component{
         });
     }
 
-    createPostCard(post){
-        let url = '/blog/post/' + post.title;
-        return(
-            <Link to={ url } key={post.id}>
-                <PostCard 
-                date= { post.date }
-                title= { post.title }
-                discr= { post.discr }
-                tags= { post.tags }
-                /> 
-            </Link>
-        ); 
-    }
-    
     render(props){
         return(
             <div>
                 <h4>Blog</h4> 
-                {this.state.posts ? this.state.posts.map(this.createPostCard) 
+                {this.state.posts ? <Blog posts={this.state.posts}/>
                     : LoadingMsg()}
             </div>
         ); 
     }        
 }
 
-export default Blog;
+export default BlogContainer;

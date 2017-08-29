@@ -1,10 +1,10 @@
 import React from 'react'
 
-const PagesComponent = (props) => (
+const Pages = (props) => (
     <div>
         <h4>{props.title}</h4>
         {props.text}
     </div>
 )
 
-export default PagesComponent;
+export default Pages;
