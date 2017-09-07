@@ -1,12 +1,14 @@
 import React  from 'react'
-import Header from './Header'
+import { withRouter } from 'react-router-dom'
+import HeaderContainer from './HeaderContainer'
 import Main from './Main'
+import '../index.css'
 
-const App = () => (
+const App = withRouter(props =>
     <div>
-        <Header />
+        <HeaderContainer {...props}/>
         <Main />
     </div>
-)
+);
 
 export default App;

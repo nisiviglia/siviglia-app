@@ -21,7 +21,6 @@ class BlogContainer extends Component{
     render(props){
         return(
             <div>
-                <h4>Blog</h4> 
                 {this.state.posts ? <Blog posts={this.state.posts}/>
                     : LoadingMsg()}
             </div>

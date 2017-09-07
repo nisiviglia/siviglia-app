@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../index.js'
+import './Blog.css'
 
 const Blog = (props) => {
     function getTag(tag, index){
@@ -12,18 +14,16 @@ const Blog = (props) => {
              <Link to={ url } key={ post.id }>
                  <li>
                     <h4>{post.title}</h4>
-                    <p>{post.date}</p>
+                    <p>{new Date(post.date).toDateString()}</p>
                     <p>{post.discr}</p> 
                     {post.tags.map(getTag)}
                 </li>
             </Link>
-
         );
     }
 
     return (
         <div className="post-card">
-            <h4>Blog</h4> 
             {props.posts.map(getCard)}
         </div> 
     );
