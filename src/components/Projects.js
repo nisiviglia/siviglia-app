@@ -1,4 +1,5 @@
 import React from 'react'
+import './Projects.css'
 
 const Projects = (props) => {
     function getProjectCard(project){
@@ -6,9 +7,12 @@ const Projects = (props) => {
             <a href={ project.url } key={ project.id }>
                 <li>
                     <h4>{ project.name }</h4>
-                    <p>{ project.discr }</p>
-                    <p>{ project.lang }</p>
-                    <p>{ project.url }</p>
+                    <p id="lang">
+                        {'\u2500'}{'\u2500'}{'\u2500'}
+                        { project.lang }
+                        {'\u2500'}{'\u2500'}{'\u2500'}
+                    </p>
+                    <p id="discr">{ project.discr }</p>
                 </li>
             </a>
         )
@@ -16,7 +20,6 @@ const Projects = (props) => {
 
     return (
         <div className="project-card">
-        <h4>Public Projects</h4>
             {props.projects.map(getProjectCard)}
         </div> 
     );

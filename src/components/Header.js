@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import '../index.css'
-import './Header.css'
+import { Link } from 'react-router-dom';
+import Title from './Title';
+import '../index.css';
+import './Header.css';
 
 const Header = (props) => {
     function createLink(key, value, index){
@@ -13,11 +14,14 @@ const Header = (props) => {
     }
 
     return(
-        <ul className='nav-header'>
-            {Object.keys(props.links).map(function(key, index){
-                return createLink(key, props.links[key], index);
-            })}
-        </ul>
+        <div>
+            <Title/>
+            <ul className='nav-header'>
+                {Object.keys(props.links).map(function(key, index){
+                    return createLink(key, props.links[key], index);
+                })}
+            </ul>
+        </div>
     );
 }
 

@@ -30,7 +30,7 @@ class HeaderContainer extends Component{
     trimPathname(pathname){
         let nextBackSlash = pathname.indexOf("/", 1);
         if(nextBackSlash !== -1){
-            pathname = pathname.substr(0, pathname.indexOf("/", 1));
+            pathname = pathname.substr(0, nextBackSlash);
         }
         return(pathname); 
     }

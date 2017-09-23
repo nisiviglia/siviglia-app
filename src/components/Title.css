@@ -1,0 +1,14 @@
+.title {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	font: normal 42px/normal "Anton", Helvetica, sans-serif;
+	color:black;
+	background-color: white;
+	text-align: center;
+	text-transform: uppercase;
+	-o-text-overflow: clip;
+	text-overflow: clip;
+	letter-spacing: 10px;
+	text-shadow: 3px 3px 0 rgb(238,238,238) , 4px 4px 0 rgb(112,112,112);
+}

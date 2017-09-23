@@ -1,20 +1,30 @@
 import React from 'react';
+import ReactDisqusThread from 'react-disqus-thread';
+import './Post.css';
 
 const Post = (props) => {
-    function getTag(tag, index){
-        return (<p key={index}>{ tag }</p>);
+    function onNewComment(comment){
+      console.log("new comment: " + comment);
     }
 
     return (
-        <div className="post-page">
-                <h4>Post</h4>
+        <div>
+            <div className="post-page">
                 <li>
-                    <h4>{props.post.title}</h4>
-                    <p>{props.post.date}</p>
-                    <p>{props.post.text}</p> 
-                    {props.post.tags.map(getTag)}
+                    <h2>{props.post.title}</h2>
+                    <p id="date">{new Date(props.post.date).toDateString()}</p>
+                    <p id='text'>{props.post.text}</p> 
                 </li>
-        </div> 
+            </div> 
+            <ReactDisqusThread
+                className='disqus'
+                shortname='nick-siviglias-blog'
+                identifier={props.post.id}
+                title={props.post.title}
+                url={window.location.href}
+                category_id=''
+                onNewCommentt={onNewComment} />
+        </div>
     );
 }
 

@@ -21,7 +21,7 @@ class PostContainer extends Component{
     render(props){
         return(
             <div>
-                {this.state.post ? <Post post={this.state.post}/>
+                {this.state.post ? <Post post={this.state.post} />
                     : LoadingMsg()}
             </div> 
         );
