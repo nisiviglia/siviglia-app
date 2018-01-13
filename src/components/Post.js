@@ -13,7 +13,7 @@ const Post = (props) => {
                 <li>
                     <h2>{props.post.title}</h2>
                     <p id="date">{new Date(props.post.date).toDateString()}</p>
-                    <p id='text'>{props.post.text}</p> 
+                    <p id='text' dangerouslySetInnerHTML={{__html:props.post.text}}></p> 
                 </li>
             </div> 
             <ReactDisqusThread

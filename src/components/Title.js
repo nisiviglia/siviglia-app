@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Title.css'
 
 const Title = () => (
     <div className='title'>
-        Nick's Blog
+       <Link to='/'> Nick's Blog </Link>
     </div>
 );
 

@@ -17,6 +17,7 @@
     font-size: large;
     font-weight: bold;
     color: black;
+    outline: 0;
 }
 
 .nav-header a:hover:not(.active){

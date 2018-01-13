@@ -3,9 +3,8 @@ import './Pages.css'
 
 const Pages = (props) => (
     <div className='Pages'>
-        <h2>{props.title}</h2>
-        <div id='text'>
-            {props.text}
+        <h2>{props.title.toUpperCase()}</h2>
+        <div id='text' dangerouslySetInnerHTML={{__html:props.text}}>
         </div>
     </div>
 )
